@@ -55,6 +55,7 @@ mod agent;
 mod agent_settings;
 mod allays;
 mod android_bundled;
+mod vein_miner;
 #[cfg(target_os = "android")]
 mod android_input;
 mod armor_stands;

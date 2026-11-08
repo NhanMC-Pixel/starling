@@ -1292,6 +1292,7 @@ impl Game<'_> {
     /// `native_playing`), mouse buttons while playing. Repeats are left out.
     pub(super) fn native_key(&mut self, key: &str, pressed: bool) {
         super::android_bundled::native_key(self, key, pressed);
+        super::vein_miner::on_key(key, pressed);
         let _ = (key, pressed);
     }
     /// Wheel steps while playing: set `claimed` to keep them from the hotbar.
@@ -2156,6 +2157,7 @@ impl Game<'_> {
         state: BlockStateId,
         canceled: &mut bool,
     ) {
+        super::vein_miner::expand(self, pos);
         let _ = (pos, state, canceled);
     }
     /// A player placed `stack` as the block `state` at `pos`: where
